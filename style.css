@@ -1,3 +1,7 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
 .titulo{
     width: 800px;
     height: auto;
@@ -8,10 +12,11 @@
     border-radius: 30px;
     background-color: black;
     opacity: 40%;
-    padding: 10px 10px 10px 10px;
-    margin-left: 100px ;
-    margin-right: 100px;
+    padding: 0.5% 0.5% 0.5% 0.5%;
+    margin-left: 6% ;
+    margin-right: 6%;
     text-align: center;
+    text-decoration: none;
 }
 a{
     color: white;
@@ -22,11 +27,35 @@ body{
     background-repeat: no-repeat ;
     background-size: cover;
 } 
+.tit{
+    margin-bottom: 0.5%;
+}
 #historia{
     text-align: center;
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-left: 15%;
+    margin-right: 15%;
     margin-top: 10px;
-    padding: 10px 10px 10px 10px;
+    padding: 2% 2% 2% 2%;
     background-color: #D78244;
+}
+#manga{
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10px;
+    padding: 2% 2% 2% 2%;
+    background-color: #D78244;
+}
+.mk{
+    display: flex;
+    float: left;
+    height: 250px;
+    width: auto;
+}
+
+footer{
+    background-image: url("footer.png");
+    background-repeat: no-repeat ;
+    background-size: cover;
+    margin-top: 3%;
 }
