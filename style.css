@@ -5,17 +5,20 @@
 .titulo{
     width: 800px;
     height: auto;
+    padding: 2%;
+    margin: 1%;
 }
 .menu{
-    border: 1px solid black;
+    border: 1px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
-    background-color: black;
-    opacity: 40%;
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 0.5% 0.5% 0.5% 0.5%;
     margin-left: 6% ;
     margin-right: 6%;
+    margin-bottom: 2%;
     text-align: center;
     text-decoration: none;
+    list-style: none;
 }
 a{
     color: white;
@@ -108,7 +111,7 @@ th {
     display: table-cell;
     vertical-align: inherit;
 }
-img{
+.p{
     border:  1px solid #D78244;
     border-radius: 1%;
     height: 215px;
