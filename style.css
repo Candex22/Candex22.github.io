@@ -5,7 +5,6 @@
 .titulo{
     width: 800px;
     height: auto;
-    margin-left: 30%;
 }
 .menu{
     border: 1px solid black;
@@ -26,12 +25,16 @@ body{
     background-image: url("fondo.png");
     background-repeat: no-repeat ;
     background-size: cover;
+    background-attachment: fixed;
 } 
 .tit{
     margin-bottom: 0.5%;
+    text-align: center;
+    justify-content: center;
 }
 #historia{
     text-align: center;
+    font-size: larger;
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 10px;
@@ -39,19 +42,94 @@ body{
     background-color: #D78244;
 }
 #manga{
+    display: flex;
+    flex: 1;
     text-align: center;
+    font-size: larger;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 20px;
+    padding: 2% 2% 2% 2%;
+    background-color: #D78244;
+}
+.mk{
+    display: flex;
+    flex: 2;
+    margin-right: 0.5%;
+    height: 210px;
+    width: auto;
+}
+#anime{
+    display: flex;
+    flex: 2;
+    text-align: center;
+    font-size: larger;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 20px;
+    padding: 2% 2% 2% 2%;
+    background-color: #D78244;
+}
+.ak{
+    display: flex;
+    flex: 1;
+    padding: 5px;
+    margin-right: 0.5%;
+    margin-top: 1%;
+    height: 210px;
+    width: auto;
+}
+#pj{
+    text-align: center;
+    font-size: larger;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 20px;
+    padding: 2% 2% 2% 2%;
+    background-color: #D78244;
+}
+.pjs td {
+    padding: 0px;
+    border-radius: 1em;
+    overflow: hidden;
+}
+.hola{
+    border: 1px solid #c49b16;
+    border-radius: 1%;
+    background-color: #c7ae3c;
+    padding: 2%;
+    margin-top: 5%;
+}
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+img{
+    border:  1px solid #D78244;
+    border-radius: 1%;
+    height: 215px;
+    width: 215px;
+    padding: 3%;
+}
+.pp{
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: #ffef94;
+}
+#musica{
+    text-align: center;
+    font-size: larger;
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 10px;
     padding: 2% 2% 2% 2%;
     background-color: #D78244;
 }
-.mk{
-    display: flex;
-    float: left;
-    height: 250px;
-    width: auto;
-}
+
 
 footer{
     background-image: url("footer.png");
