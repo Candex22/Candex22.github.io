@@ -104,12 +104,24 @@ body{
     border-radius: 1em;
     overflow: hidden;
 }
+.hola1{
+    border: 1px solid #c49b16;
+    border-radius: 1%;
+    background-color: #c7ae3c;
+    padding: 1%;
+}
 .hola{
     border: 1px solid #c49b16;
     border-radius: 1%;
     background-color: #c7ae3c;
-    padding: 2%;
+    padding: 1%;
     margin-top: 5%;
+}
+.chau{
+    border: 1px solid #2493dd;
+    border-radius: 1%;
+    background-color: #6aaae6;
+    padding: 2%;
 }
 td {
     display: table-cell;
