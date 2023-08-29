@@ -1,8 +1,154 @@
-html{
-    scroll-behavior: smooth;
-}
 *{
-    padding: 0%;
-    margin: 0%;
-}
-
+    padding: 0;
+    margin: 0;
+  }
+  :root{
+    --varwidth: 100%;
+    --varheigth: 100%;
+    --fontsize:2.5rem;
+  
+  }
+  .full-table{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+  }
+  .tbod-table{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .tr-table{
+    margin: 1rem;
+    height: 7%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 2rem;
+  }
+  .td-table{
+    height: 100%;
+  
+    }
+  /* }
+  .input-box{
+    width: 100%;
+    text-align: center;
+    height: 100%;
+  } */
+  
+  .input-box[type="text"] {
+    text-align: center;
+    width: var(--varwidth);
+    height: var(--varheigth);
+    font-size: var(--fontsize);
+    /* Ancho del input */
+    border: 1px solid #9e9e9e; /* Borde del input */
+    border-radius: 5px; /* Radio de borde */
+    outline: none; /* Eliminar el contorno al hacer clic */
+    background-color: #fff;
+  }
+  
+  .input-box[type="text"]:focus {
+    border-color: #66afe9; /* Color del borde al hacer foco */
+    box-shadow: 0 0 5px #66afe9; /* Sombra al hacer foco */
+  }
+  .input-box[type="text"]::-webkit-inner-spin-button,
+  .input-box[type="text"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Quitar apariencia del botón */
+    margin: 0; /* Quitar margen */
+  }
+  
+  .input-box[type="text"] {
+    -moz-appearance: textfield; /* Mostrar como campo de texto en Firefox */
+  }
+  
+  
+  .input-box2{
+    width: var(--varwidth);
+    height: var(--varheigth);
+    font-size: var(--fontsize);
+    border: none;
+    background-color: transparent;
+    outline: none;
+  }
+  .contBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .625rem;
+    width: 100%;
+    height: 5rem;
+  }
+  .BtnSend{
+    font-size: 1.8rem;
+    padding: .75rem;
+    border-radius: .61rem;
+    cursor: pointer;
+    border: none;
+    background-color: rgb(71, 99, 238);
+    color: #ebebeb;
+  
+  }
+  .BtnSend:hover{
+    background-color: rgb(41, 60, 157);
+    color: #fff;
+  }
+  .BtnSend:active{
+   scale: 0.9;
+  }
+  .textTitle{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .titleH1{
+    gap: 0.5rem;
+    font-size: 2.5rem;
+  }
+  
+  .NumeroIncorrecto{
+    border: 3px solid #02836e;
+  }
+  .Tiempo{
+    font-size: 2.4rem;
+    color: #333;
+  }
+  .tablaPosiciones{
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .TituloPosiciones{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  .ElementosPosicion{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    list-style: none;
+  }
+  .liposicion{
+    font-size: 2rem;
+    color: #222;
+  }
+  .ElementosPosicion .liposicion:first-child{
+    border:2px solid #22cd97;
+    color: #22cd97;
+    font-size: 2.7rem;
+    padding: .625rem;
+  }
