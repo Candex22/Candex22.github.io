@@ -10,6 +10,12 @@
 <body>
 
 
+
+
+
+
+
+
     <table class="full-table" id="TableTODO">
         <tbody class="tbod-table" id="tbodyAll">
           <tr class="tr-table">
@@ -122,44 +128,51 @@
           <h2 id="tiempo" class="Tiempo">00:00</h2>
         </div>
       </table>
-      
+     
       <div class="tablaPosiciones" id="tablapp2">
         <h2 class="TituloPosiciones">Tabla de Posiciones</h2>
         <div class="ElementosPosicion" id="olElement"></div>
       </div>
 
+
+
+
       <script src="script.js"></script>
      
-    <?php
-      if($_SERVER["REQUEST_METHOD"]== "GET"){
-       $servername = "localhost";
-       $username = "phpmyadmin";
-       $password = "RedesInformaticas";
-       $dbname = "db_molinari";
+      <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $servername = "localhost";
+            $username = "phpmyadmin";
+            $password = "RedesInformaticas";
+            $dbname = "db_molinari";
 
-       $conn = new mysqli($servername, $username, $password, $dbname);
-       if ($conn->connect_error) {
-          die("Conexión fallida: " . $conn->connect_error);
-        }
-     
-        $nombre = $_GET["NombreUsuario"];
-        $tiempo = $_GET["tiempoGuargado"];
 
-        echo "valores php: nombreus: " . $nombre . " // timepo: " . $tiempo;
-       
-        if (!empty($_GET["NombreUsuario"]) && $_GET["tiempoGuargado"]) {
-          $sql = "INSERT INTO puntuaciones (nombre, tiempo) VALUES ('$nombre', '$tiempo')";
-          if ($conn->query($sql) === TRUE) {
-            echo "tiempo guardado exitosamente";
-          } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-          }
-          $result = $conn->query($sql);
-          $scores = array();
-          $conn->close();
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+
+            $nombre = $_POST["NombreUsuario"];
+            $tiempo = $_POST["tiempoGuargado"];
+
+
+            $sql = "INSERT INTO puntuaciones (nombre, tiempo) VALUES ('$nombre', '$tiempo')";
+            if ($conn->query($sql) === TRUE) {
+                echo "";
+            } else {
+                echo "" . $sql . "<br>" . $conn->error;
+            }
+
+
+            $conn->close();
         }
-      }
+
+
     ?>
+
+
+
+
+
+
 
 
 </body>

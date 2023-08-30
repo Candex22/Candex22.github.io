@@ -3,6 +3,9 @@ const Multi = document.querySelectorAll('.Multiplicacion')
 const iguales = document.querySelectorAll('.Iguales')
 const deshabilitadp = document.querySelectorAll('.disable')
 
+
+
+
 const tbodyAll = document.querySelector("#tbodyAll");
 const btnIniciar = document.querySelector("#Inicio");
 const Username = document.querySelector("#nameUser");
@@ -11,23 +14,47 @@ const comprobar = document.querySelector("#comprobar");
 const enviar = document.querySelector("#enviar");
 const TableTODO = document.querySelector("#TableTODO");
 
+
+
+
 const tiempoDisplay = document.querySelector('#tiempo');
 const olElement = document.querySelector('#olElement');
 const tablapp2 = document.querySelector('#tablapp2');
+
+
+
+
+
+
 
 
 let intervalo;
 let tiempo = 0;
 let cronometroActivo = false;
 
+
+
+
 //contador 2
+
+
+
 
 let contador = 0;
 let bandera = false;
 
+
+
+
 function refreshN(){
     location.reload();
 }
+
+
+
+
+
+
 
 
 //calgo el valor de los elementos y bloqueo algunos elementos al iniciar la ventana
@@ -51,7 +78,16 @@ window.addEventListener('load', ()=> {
         onlyreadd.disabled = true;
     }
 
+
+
+
 });
+
+
+
+
+
+
 
 
 //numeros predeterminados
@@ -89,12 +125,24 @@ no13pre.value = parseInt("14")
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 //Numeros ingresados por Usuario
 const NumbersUserBlock = () =>{
     let ArrayCorrectos = [7,7,1,7,35,8,2,6,42,7]
     let arraysElementos = [UserNo1,UserNo2,UserNo3,UserNo4,UserNo5,UserNo6,UserNo7,UserNo8,UserNo9,UserNo10]
     let ArrayNumero = [UserNo1.value,UserNo2.value,UserNo3.value,UserNo4.value,UserNo5.value,UserNo6.value,UserNo7.value,UserNo8.value,UserNo9.value,UserNo10.value]
-    
+   
     if (ArrayNumero.length !== ArrayCorrectos.length) {
         console.log('Los arrays no son iguales en longitud.');
       } else {
@@ -131,6 +179,9 @@ const NumbersUserBlock = () =>{
       }
 }
 
+
+
+
 const UserNo1 = document.querySelector("#UserNo1")
 const UserNo2 = document.querySelector("#UserNo2")
 const UserNo3 = document.querySelector("#UserNo3")
@@ -142,11 +193,20 @@ const UserNo8 = document.querySelector("#UserNo8")
 const UserNo9 = document.querySelector("#UserNo9")
 const UserNo10 = document.querySelector("#UserNo10")
 
+
+
+
 comprobar.addEventListener('click',NumbersUserBlock)
+
+
+
 
 function ObtenerNombreUsuario(){
     return Username.textContent
 }
+
+
+
 
 //oculto algunos elementos para que no se puedan acceder
 tbodyAll.style.display = "none"
@@ -156,12 +216,15 @@ enviar.style.display = "none"
 tiempoDisplay.style.display = "none"
 TableTODO.style.display = "none"
 
+
+
+
 btnIniciar.addEventListener("click",()=>{
     let NombreUsuario = prompt("Ingrese su Nombre")
     if(NombreUsuario.trim() === ""){
         console.log("El campo esta vacio")
         tbodyAll.style.display = "none"
-        
+       
     }else{
         tbodyAll.style.display = "flex"
         Username.innerHTML = " "+NombreUsuario
@@ -172,10 +235,10 @@ btnIniciar.addEventListener("click",()=>{
         TableTODO.style.display = "flex"
         tablapp2.style.display = "none"
         iniciarCronometro()
-        
+       
         contador = 0;
         bandera = true;
-        
+       
         // Iniciar el contador
         const interval = setInterval(() => {
           if (bandera === false) {
@@ -187,8 +250,17 @@ btnIniciar.addEventListener("click",()=>{
         return NombreUsuario;
 
 
+
+
+
+
+
+
     }
 })
+
+
+
 
 //Cronometro------------------------------------------------------------
 function actualizarTiempo() {
@@ -221,9 +293,11 @@ function formatoDosDigitos(numero) {
   }
   //Cronometro termian el bloque------------------------------------------------------------
 
-function variablesphp(NombreUsuario,tiempoGuardado){
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET","index.php?NombreUsuario=" + NombreUsuario + "&tiempoGuargado="+ tiempoGuardado,true);
-  xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-  
+
+  function variablesphp(NombreUsuario, tiempoGuardado) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "index.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    var data = "NombreUsuario=" + encodeURIComponent(NombreUsuario) + "&tiempoGuargado=" + encodeURIComponent(tiempoGuardado);
+    xhr.send(data);
 }
