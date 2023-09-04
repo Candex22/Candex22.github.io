@@ -134,22 +134,32 @@
         <div class="ElementosPosicion" id="olElement"></div>
       </div>
 
-
-
-
       <script src="script.js"></script>
-     
+      <?php
+        $servername = "localhost";
+        $username = "phpmyadmin";
+        $password = "RedesInformaticas";
+        $dbname = "db_molinari";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        $queryTiempo = "SELECT * FROM puntuaciones ORDER BY tiempo ASC LIMIT 10";
+        $resultTiempo = mysqli_query($conn, $queryTiempo);
+
+      ?>
+
+      <?php
+        $pos = 0;
+        echo "<ol>";
+        while($cmnt = mysqli_fetch_array($resultTiempo)){
+          $pos = $pos + 1;
+          echo "<center><li class=\"ElementosPosicion\" id=\"olElement\"><strong>$cmnt[1] - $cmnt[2]</strong></li></center>";
+        }
+        echo "</ol>";
+      ?>
+
+
       <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $servername = "localhost";
-            $username = "phpmyadmin";
-            $password = "RedesInformaticas";
-            $dbname = "db_molinari";
-
-
-            $conn = new mysqli($servername, $username, $password, $dbname);
-
-
             $nombre = $_POST["NombreUsuario"];
             $tiempo = $_POST["tiempoGuargado"];
 
@@ -161,19 +171,8 @@
                 echo "" . $sql . "<br>" . $conn->error;
             }
 
-
             $conn->close();
         }
-
-
     ?>
-
-
-
-
-
-
-
-
 </body>
 </html>
