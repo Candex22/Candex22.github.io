@@ -22,6 +22,10 @@
     align-items: center;
     
   }
+
+  #tablapp21{
+    display: flex ;
+  }
   
   .tr-table{
     margin: 1rem;
@@ -146,9 +150,16 @@
     font-size: 2rem;
     color: #222;
   }
-  .ElementosPosicion .liposicion:first-child{
+  .first-child{
     border:2px solid #22cd97;
     color: #22cd97;
     font-size: 2.7rem;
     padding: .625rem;
+    width: 800px;
+  }
+  .rest{
+    color: #333;
+    font-size: 2rem;
+    width: 700px;
+    margin-top: 10px;
   }

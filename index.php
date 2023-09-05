@@ -8,14 +8,6 @@
     <title>Crucigramas matemáticos</title>
 </head>
 <body>
-
-
-
-
-
-
-
-
     <table class="full-table" id="TableTODO">
         <tbody class="tbod-table" id="tbodyAll">
           <tr class="tr-table">
@@ -147,16 +139,21 @@
 
       ?>
 
-      <?php
-        $pos = 0;
-        echo "<ol>";
-        while($cmnt = mysqli_fetch_array($resultTiempo)){
-          $pos = $pos + 1;
-          echo "<center><li class=\"ElementosPosicion\" id=\"olElement\"><strong>$cmnt[1] - $cmnt[2]</strong></li></center>";
-        }
-        echo "</ol>";
-      ?>
-
+      <div id=divId>
+        <?php
+          $pos = 0;
+          echo "<ol>";
+          while($cmnt = mysqli_fetch_array($resultTiempo)){
+            if($pos == 0){
+              echo "<center><li class=\"ElementosPosicion liposicion first-child\"><strong>$cmnt[1] - $cmnt[2]</strong></li></center>";
+            }else{
+              echo "<center><li class=\"ElementosPosicion liposicion rest\"><strong>$cmnt[1] - $cmnt[2]</strong></li></center>";
+            }
+            $pos = $pos + 1;
+          }
+          echo "</ol>";
+        ?>
+      </div>
 
       <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -3,9 +3,6 @@ const Multi = document.querySelectorAll('.Multiplicacion')
 const iguales = document.querySelectorAll('.Iguales')
 const deshabilitadp = document.querySelectorAll('.disable')
 
-
-
-
 const tbodyAll = document.querySelector("#tbodyAll");
 const btnIniciar = document.querySelector("#Inicio");
 const Username = document.querySelector("#nameUser");
@@ -13,49 +10,24 @@ const ContentUser = document.querySelector("#ContentUser");
 const comprobar = document.querySelector("#comprobar");
 const enviar = document.querySelector("#enviar");
 const TableTODO = document.querySelector("#TableTODO");
-
-
-
+const olPosiciones = document.querySelector("#TableTODO");
 
 const tiempoDisplay = document.querySelector('#tiempo');
 const olElement = document.querySelector('#olElement');
 const tablapp2 = document.querySelector('#tablapp2');
 
-
-
-
-
-
-
-
 let intervalo;
 let tiempo = 0;
 let cronometroActivo = false;
 
-
-
-
 //contador 2
-
-
-
 
 let contador = 0;
 let bandera = false;
 
-
-
-
 function refreshN(){
     location.reload();
 }
-
-
-
-
-
-
-
 
 //calgo el valor de los elementos y bloqueo algunos elementos al iniciar la ventana
 window.addEventListener('load', ()=> {
@@ -77,18 +49,7 @@ window.addEventListener('load', ()=> {
         let onlyreadd = deshabilitadp[jj]
         onlyreadd.disabled = true;
     }
-
-
-
-
 });
-
-
-
-
-
-
-
 
 //numeros predeterminados
 //Resultados
@@ -121,21 +82,6 @@ let no12pre = document.querySelector("#No12Pre")
 no12pre.value = parseInt("7")
 let no13pre = document.querySelector("#No13Pre")
 no13pre.value = parseInt("14")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Numeros ingresados por Usuario
 const NumbersUserBlock = () =>{
@@ -179,9 +125,6 @@ const NumbersUserBlock = () =>{
       }
 }
 
-
-
-
 const UserNo1 = document.querySelector("#UserNo1")
 const UserNo2 = document.querySelector("#UserNo2")
 const UserNo3 = document.querySelector("#UserNo3")
@@ -193,20 +136,11 @@ const UserNo8 = document.querySelector("#UserNo8")
 const UserNo9 = document.querySelector("#UserNo9")
 const UserNo10 = document.querySelector("#UserNo10")
 
-
-
-
 comprobar.addEventListener('click',NumbersUserBlock)
-
-
-
 
 function ObtenerNombreUsuario(){
     return Username.textContent
 }
-
-
-
 
 //oculto algunos elementos para que no se puedan acceder
 tbodyAll.style.display = "none"
@@ -215,9 +149,6 @@ comprobar.style.display = "none"
 enviar.style.display = "none"
 tiempoDisplay.style.display = "none"
 TableTODO.style.display = "none"
-
-
-
 
 btnIniciar.addEventListener("click",()=>{
     let NombreUsuario = prompt("Ingrese su Nombre")
@@ -234,6 +165,7 @@ btnIniciar.addEventListener("click",()=>{
         tiempoDisplay.style.display = "flex"
         TableTODO.style.display = "flex"
         tablapp2.style.display = "none"
+        document.getElementById('divId').style.display = 'none'; 
         iniciarCronometro()
        
         contador = 0;
@@ -248,19 +180,8 @@ btnIniciar.addEventListener("click",()=>{
           }
         }, 1000);
         return NombreUsuario;
-
-
-
-
-
-
-
-
     }
 })
-
-
-
 
 //Cronometro------------------------------------------------------------
 function actualizarTiempo() {
@@ -292,7 +213,6 @@ function formatoDosDigitos(numero) {
     return numero.toString().padStart(2, '0');
   }
   //Cronometro termian el bloque------------------------------------------------------------
-
 
   function variablesphp(NombreUsuario, tiempoGuardado) {
     var xhr = new XMLHttpRequest();
